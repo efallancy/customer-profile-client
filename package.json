@@ -1,0 +1,29 @@
+{
+  "name": "customer-profile-client",
+  "version": "1.0.0",
+  "description": "Customer Profile- Client app",
+  "author": "Emmanuel Fallancy <emmanuel.fallancy@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "normalize.css": "^8.0.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4",
+    "styled-components": "^3.3.2",
+    "validator": "^10.3.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1"
+  },
+  "engines": {
+    "node": ">=8.11"
+  }
+}
