@@ -7,7 +7,7 @@ This is the client app for the customer profile dashboard app. This app is boots
 Once the data is fetched, the user will be able to see the list of customer profiles fetched from the API.
 
 ## Installing dependencies
-To run the API, make sure to install the dependencies. To install the dependencies, run the command below:
+To run the app, make sure to install the dependencies. The app requires **Node** version of at least `v8.11.x.`. To install the dependencies, run the command below:
 
 Using `yarn`:
 ```sh
