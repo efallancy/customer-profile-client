@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Primary renders correctly 1`] = `
+.c0 {
+  font-size: 20px;
+  background-color: #13D0A7;
+  border: none;
+  border-radius: 20px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  padding: 0.5rem;
+  min-width: 100px;
+  margin: 0.5rem 0;
+  outline: none;
+}
+
+.c0:hover {
+  cursor: pointer;
+}
+
+<button
+  className="c0"
+/>
+`;
+
+exports[`Button Primary renders correctly when disabled 1`] = `
+.c0 {
+  font-size: 20px;
+  background-color: #13D0A7;
+  border: none;
+  border-radius: 20px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  padding: 0.5rem;
+  min-width: 100px;
+  margin: 0.5rem 0;
+  outline: none;
+}
+
+.c0:hover {
+  cursor: not-allowed;
+}
+
+<button
+  className="c0"
+  disabled={true}
+/>
+`;
+
+exports[`Button Secondary renders correctly 1`] = `
+.c0 {
+  font-size: 20px;
+  background-color: #13D0A7;
+  border: none;
+  border-radius: 20px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  padding: 0.5rem;
+  min-width: 100px;
+  margin: 0.5rem 0;
+  outline: none;
+  background-color: #FFFFFF;
+  border: 2px solid #13D0A7;
+  color: #13D0A7;
+}
+
+.c0:hover {
+  cursor: pointer;
+}
+
+<button
+  className="c0"
+/>
+`;
+
+exports[`Button Secondary renders correctly when disabled 1`] = `
+.c0 {
+  font-size: 20px;
+  background-color: #13D0A7;
+  border: none;
+  border-radius: 20px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  padding: 0.5rem;
+  min-width: 100px;
+  margin: 0.5rem 0;
+  outline: none;
+  background-color: #FFFFFF;
+  border: 2px solid #13D0A7;
+  color: #13D0A7;
+}
+
+.c0:hover {
+  cursor: not-allowed;
+}
+
+<button
+  className="c0"
+  disabled={true}
+/>
+`;

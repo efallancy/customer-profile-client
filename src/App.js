@@ -1,15 +1,15 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import isEmail from 'validator/lib/isEmail';
 
 import { getCustomers, createCustomer, updateCustomer, deleteCustomer } from './api/customers';
-import { PageHeading, TitleHeading, ErrorHeading } from './components/Heading';
+import { PageHeading, ErrorHeading } from './components/Heading';
 import { PrimaryButton, SecondaryButton } from './components/Button';
 import InputSearch from './components/InputSearch';
 import Table, { TableRow, TableData } from './components/Table';
 import Card from './components/Card';
-import Form from './components/Form';
-import InputForm from './components/InputForm';
+import NewCustomerForm from './NewCustomerForm';
+import EditCustomerForm from './EditCustomerForm';
 
 const Container = styled.div`
   max-width: 1200px;
@@ -24,7 +24,7 @@ const Layout = styled.div`
   justify-content: space-between;
   width: 100%;
   @media (max-width: 1200px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 `;
 
@@ -48,14 +48,6 @@ const RightSection = styled.div`
     margin: 0;
     width: 100%;
   }
-`;
-
-const SaveButton = PrimaryButton.extend`
-  margin-right: 0.5rem;
-`;
-
-const CancelButton = SecondaryButton.extend`
-  padding: 0.4rem;
 `;
 
 const EditButton = PrimaryButton.extend`
@@ -260,84 +252,17 @@ class App extends Component {
             <Card>
               {
                 this.state.showNewCustomerForm ?
-                  <Form
+                  <NewCustomerForm
                     key={this.state.showNewCustomerForm}
-                    onSubmit={this.handleSubmitNewCustomer}
-                    onValidate={this.validateCustomerForm}
-                    values={{
-                      name: '',
-                      email: ''
-                    }}
-                    render={({
-                      values,
-                      errors,
-                      setValues
-                    }) =>
-                      <Fragment>
-                        <TitleHeading>New Customer</TitleHeading>
-                        <InputForm
-                          label="Name"
-                          placeholder="Name"
-                          errorFeedback={errors.name || ''}
-                          onChange={(e) => {
-                            setValues({ name: e.target.value || '' });
-                          }}
-                          inputValue={values.name || ''}
-                        />
-                        <InputForm
-                          label="Email"
-                          placeholder="Email"
-                          errorFeedback={errors.email || ''}
-                          onChange={(e) => {
-                            setValues({ email: e.target.value || '' });
-                          }}
-                          inputValue={values.email || ''}
-                        />
-                        <div>
-                          <SaveButton>save</SaveButton>
-                        </div>
-                      </Fragment>
-                    }
+                    onSubmitForm={this.handleSubmitNewCustomer}
+                    onValidateForm={this.validateCustomerForm}
                   /> :
-                  <Form
+                  <EditCustomerForm
                     key={this.state.showNewCustomerForm}
-                    onSubmit={this.handleSubmitExistingCustomer}
-                    onValidate={this.validateCustomerForm}
-                    values={this.state.editCustomerProfile}
-                    render={({
-                      values,
-                      errors,
-                      setValues
-                    }) =>
-                      <Fragment>
-                        <TitleHeading>Existing Customer</TitleHeading>
-                        <p>ID: {values.id}</p>
-                        <InputForm
-                          label="Name"
-                          placeholder="Name"
-                          errorFeedback={errors.name || ''}
-                          onChange={(e) => {
-                            setValues({ name: e.target.value || '' });
-                          }}
-                          inputValue={values.name || ''}
-                        />
-                        <InputForm
-                          label="Email"
-                          placeholder="Email"
-                          errorFeedback={errors.email || ''}
-                          onChange={(e) => {
-                            setValues({ email: e.target.value || '' });
-                          }}
-                          inputValue={values.email || ''}
-                        />
-                        <div>
-                          <SaveButton>save</SaveButton>
-                          <CancelButton onClick={this.toggleShowCustomerForm}>
-                            cancel
-                          </CancelButton>
-                        </div>
-                      </Fragment>
-                    }
+                    onSubmitForm={this.handleSubmitExistingCustomer}
+                    onValidateForm={this.validateCustomerForm}
+                    initialValues={this.state.editCustomerProfile}
+                    onClickCancel={this.toggleShowCustomerForm}
                   />
               }
             </Card>

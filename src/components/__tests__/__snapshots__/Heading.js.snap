@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Heading Error heading renders correctly 1`] = `
+.c0 {
+  color: #FF4040;
+  font-size: 15px;
+}
+
+<p
+  className="c0"
+/>
+`;
+
+exports[`Heading Page heading renders correctly 1`] = `
+.c0 {
+  font-size: 48px;
+  color: #121958;
+  -webkit-letter-spacing: 0.16px;
+  -moz-letter-spacing: 0.16px;
+  -ms-letter-spacing: 0.16px;
+  letter-spacing: 0.16px;
+}
+
+<h1
+  className="c0"
+/>
+`;
+
+exports[`Heading Title heading renders correctly 1`] = `
+.c0 {
+  font-size: 48px;
+  color: #121958;
+  -webkit-letter-spacing: 0.16px;
+  -moz-letter-spacing: 0.16px;
+  -ms-letter-spacing: 0.16px;
+  letter-spacing: 0.16px;
+  font-size: 28px;
+  margin: 0 0 1rem;
+}
+
+<h3
+  className="c0"
+/>
+`;
