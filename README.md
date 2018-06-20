@@ -34,7 +34,7 @@ npm run start
 
 **IMPORTANT**: Make sure to start the [Customer Profile API](https://github.com/emmafallancy/customer-profile-api) server before running the client application. To run the server, refer to the instructions in the API repo.
 
-By default, the server will run at `http://localhost:3000`. 
+By default, the server will run at `http://localhost:3000`. The API request base endpoint will default to `http://localhost:4200`.
 
 ## Testing
 The test can be run by the referring to the command below.

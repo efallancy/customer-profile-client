@@ -60,6 +60,10 @@ const RemoveButton = SecondaryButton.extend`
   padding: 0.4rem;
 `;
 
+const StyledTableRow = TableRow.extend`
+  background-color: ${props => props.selected ? '#EFEFEF' : 'none'};
+`;
+
 class App extends Component {
   constructor() {
     super();
@@ -224,7 +228,14 @@ class App extends Component {
               <Table headers={['ID', 'Name', 'Email', 'Action']}>
                 {
                   this.state.customers.map((customer, index) =>
-                    <TableRow key={index}>
+                    <StyledTableRow
+                      key={index}
+                      selected={
+                        !this.state.showNewCustomerForm &&
+                        this.state.editCustomerProfile &&
+                        this.state.editCustomerProfile.id === customer.id
+                      }
+                    >
                       <TableData>{customer.id}</TableData>
                       <TableData>{customer.name}</TableData>
                       <TableData>{customer.email}</TableData>
@@ -242,7 +253,7 @@ class App extends Component {
                           remove
                         </RemoveButton>
                       </TableData>
-                    </TableRow>
+                    </StyledTableRow>
                   )
                 }
               </Table>
